@@ -30,6 +30,11 @@ pub struct EslConnection {
 }
 
 impl EslConnection {
+    /// returns connection_info in outbound mode
+    pub async fn connection_info(&self) -> Option<HashMap<String, Value>> {
+        self.connection_info.clone()
+    }
+
     /// returns call uuid in outbound mode
     pub async fn call_uuid(&self) -> Option<String> {
         self.call_uuid.clone()
